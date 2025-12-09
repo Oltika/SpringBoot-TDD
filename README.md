@@ -1,6 +1,6 @@
-# Spring Boot Test-Driven Development Demo Project
+# Spring Boot TDD Demo
 
-A small Spring Boot demo application (Spring Boot TDD) demonstrating a simple customer data service using Spring Data JPA and PostgreSQL.
+Lean Spring Boot project that shows how to build a Customer CRUD API using Test-Driven Development. It uses Spring Data JPA with PostgreSQL (H2 for tests), JUnit 5, and Mockito to demonstrate a small, production-style service with validation and clear error handling.
 
 ## Project overview
 
@@ -16,6 +16,11 @@ A small Spring Boot demo application (Spring Boot TDD) demonstrating a simple cu
 Note: Spring Boot 3.0.x targets Java 17 as its baseline. This project is configured for Java 21 and has been verified with that runtime; keep the Java version aligned across your local JDK, Maven toolchain, and deployment environment.
 
 This project provides a minimal REST/backend service around a Customer entity and includes unit and integration tests.
+
+## What the API does
+
+- CRUD for customers: create, read by id, list all, update, and delete.
+- Validates input and returns clear HTTP errors for bad requests, conflicts, and missing records.
 
 ## Prerequisites
 
@@ -49,7 +54,7 @@ Note: Tests use an embedded H2 database (test scope) so unit tests and many inte
 
 ## Build & run
 
-From the project root you can build and run the application with Maven.
+From the project root you can build and run the application with Maven (ensure Java 21 is selected in your toolchain).
 
 Build (package the app):
 
@@ -115,12 +120,12 @@ Unit tests run on an in-memory H2 database and should run without external servi
 ## Useful files & structure
 
 - `src/main/java` - main application code
-    - `controller/` - REST controllers
-    - `model/` - JPA entities
-    - `repository/` - Spring Data JPA repositories
+    - `data/entity/` - JPA entities
+    - `data/repository/` - Spring Data JPA repositories
     - `service/` - service layer classes
-    - `entity/` - data transfer objects (DTOs)
-    - `error/` - custom exceptions and error handling
+    - `web/controller/` - REST controllers
+    - `web/error/` - custom exceptions and error handling
+    - `model/` - API DTOs
     - `TestingSystemApplication.java` - main Spring Boot application class
 - `src/main/resources/application.properties` - main configuration
 - `src/test` - unit and integration tests (includes H2 test data in `src/test/resources`)
