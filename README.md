@@ -1,4 +1,4 @@
-# Spring Boot Test Driven Development
+# Spring Boot Test-Driven Development Demo Project
 
 A small Spring Boot demo application (Spring Boot TDD) demonstrating a simple customer data service using Spring Data JPA and PostgreSQL.
 
