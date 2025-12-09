@@ -29,6 +29,16 @@ This project provides a minimal REST/backend service around a Customer entity an
 - Docker (recommended) if you want to run a local PostgreSQL instance using the provided script.
 - Optional: A PostgreSQL client (e.g. `psql`) to inspect the database.
 
+## Project Setup
+
+This project was initialized using [Spring Initializr](https://start.spring.io/). If you need to recreate or extend this project, you can use Spring Initializr with the following dependencies:
+
+- **Spring Web** - For building RESTful web services
+- **Spring Data JPA** - For data persistence with JPA
+- **PostgreSQL Driver** - For PostgreSQL database connectivity
+- **H2 Database** - For in-memory testing (test scope)
+
+
 ## Database configuration
 
 By default the application is configured to connect to a local PostgreSQL instance. See `src/main/resources/application.properties`
